@@ -1,4 +1,4 @@
-import s from './Feedback.module.css';
+import s from './Notification.module.css';
 
 const Notification = ({ message }) => (
   <div className={s.notification}>{message}</div>
