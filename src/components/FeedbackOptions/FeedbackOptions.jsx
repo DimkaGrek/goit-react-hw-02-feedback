@@ -1,16 +1,17 @@
 import s from './FeedbackOptions.module.css';
 
-const FeedbackOptions = ({ onGood, onNeutral, onBad }) => (
+const FeedbackOptions = ({ options, onLeaveFeedback }) => (
   <div className={s.buttons}>
-    <button type="button" onClick={onGood} className={s.btn_good}>
-      Good
-    </button>
-    <button type="button" onClick={onNeutral} className={s.btn_neutral}>
-      Neutral
-    </button>
-    <button type="button" onClick={onBad} className={s.btn_bad}>
-      Bad
-    </button>
+    {options.map(option => (
+      <button
+        type="button"
+        onClick={() => onLeaveFeedback(option)}
+        className={s[`btn_${option}`]}
+        key={option}
+      >
+        {option}
+      </button>
+    ))}
   </div>
 );
 
